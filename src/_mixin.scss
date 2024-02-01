@@ -1,9 +1,9 @@
 @use './_colors.scss' as colors;
 $link-hover-color: darken(colors.$main-background-color,15%);
-@mixin standartHover() {
+@mixin standartHover($bckg-color: colors.$main-background-color) {
     transition: background .25s ease-in-out;
-    background: transparent;
+    background: $bckg-color;
     &:hover{
-        background: $link-hover-color;
+        background: darken($bckg-color, 15%);
     }
 }

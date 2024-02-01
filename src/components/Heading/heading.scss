@@ -1,15 +1,16 @@
 @use '../../_colors.scss' as colors;
 @use '../../_mixin.scss' as mixins;
 $link-hover-color: darken(colors.$main-background-color,15%);
-.heading{
+.site__heading{
+    background: colors.$main-background-color;
     display: block;
     width: 100%;
-    padding: 1rem 2rem;
-    >.container{
+    padding: 1.125rem 2.5rem;
+    //>.container{
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-    }
+    //}
     .nav{
         flex:1;
     }
@@ -38,18 +39,19 @@ $link-hover-color: darken(colors.$main-background-color,15%);
     }
 }
 .heading__button{
-    width: 133px;
-    height: 42px;
-    padding: 12px, 30px, 12px, 30px;
+    padding: .5rem 1.875rem;
     background:transparent;
     border: 2px solid colors.$main-color;;
     @include mixins.standartHover;
+    text-decoration: none;
+    color: colors.$main-color;
 }
 .heading__logo{
     font-size: 1.6rem;
     font-weight: 800;
-    line-height: 32px;
+    line-height: 2.25rem;
     letter-spacing: 0em;
     text-align: left;
     color: colors.$main-color;
+    font-family: sans-serif;    
 }

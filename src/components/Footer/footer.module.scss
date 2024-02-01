@@ -1,0 +1,5 @@
+@use '../../colors.scss' as colors;
+.site__footer{
+    border-top: 1px solid colors.$main-color;
+    background: colors.$main-background-color;
+}

@@ -1,16 +1,14 @@
-import propTypes,{ string } from 'prop-types';
 import './heading.scss';
 import NavMenu from '@components/NavMenu/NavMenu';
-import Button from '@components/Button/Button';
+import { Link } from "react-router-dom";
 export default function Heading(){
-    
     return (
-        <header className="heading">
-            <div className="container"> 
-                <div className="heading__logo">Left</div>
+        <header className="site__heading">
+            {/* <div className="container">  */}
+                <div className="heading__logo">Aleksandr Schukin</div>
                 <NavMenu className="heading__middle"/>
-                <Button onClick={()=>console.log('click Contact')} className="heading__button" label="Контакты"/>
-            </div>
+                <Link className='heading__button' to="/contact">Контакты</Link>
+            {/* </div> */}
         </header>
     );
 }

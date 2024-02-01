@@ -8,6 +8,14 @@ export default function NavMenu(){
         {
             lable:"Обо мне",
             route:"/about"
+        },
+        {
+            lable:"Отзывы",
+            route:"/reviews"
+        },
+        {
+            lable:"Блог",
+            route:"/blog"
         }
 
     ];
