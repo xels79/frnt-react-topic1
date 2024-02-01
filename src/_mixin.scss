@@ -1,0 +1,9 @@
+@use './_colors.scss' as colors;
+$link-hover-color: darken(colors.$main-background-color,15%);
+@mixin standartHover() {
+    transition: background .25s ease-in-out;
+    background: transparent;
+    &:hover{
+        background: $link-hover-color;
+    }
+}

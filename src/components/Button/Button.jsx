@@ -1,8 +1,6 @@
 import propTypes,{ string } from 'prop-types';
 
-export default function Button(params){
-    const {onClick, className, label} = params;
-    console.log(onClick);
+export default function Button({ onClick, className, label }){
     return (
         <button onClick={onClick} className={className}>{label}</button>
     );

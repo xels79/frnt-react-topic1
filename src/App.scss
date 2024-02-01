@@ -1,10 +1,20 @@
+@use './_colors.scss' as colors;
+
 #root {
-  max-width: 1280px;
+  max-width: 1480px;
+  height: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
+  background: colors.$main-background-color;
   text-align: center;
+  font-family: Roboto;
+}
+.container{
+  max-width: 1200px;
 }
 
+
+/*
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -40,3 +50,4 @@
 .read-the-docs {
   color: #888;
 }
+*/

@@ -1,0 +1,55 @@
+@use '../../_colors.scss' as colors;
+@use '../../_mixin.scss' as mixins;
+$link-hover-color: darken(colors.$main-background-color,15%);
+.heading{
+    display: block;
+    width: 100%;
+    padding: 1rem 2rem;
+    >.container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .nav{
+        flex:1;
+    }
+    border-bottom: 1px solid colors.$main-color;
+}
+.nav{
+    text-align: center;
+    display: block;
+    .nav__menu{
+        display: inline-block;
+        .nav__item{
+            float: left;
+        }
+        .nav__link{
+            margin: .25rem .5rem;
+            padding: .25rem 1rem;
+            display: inline-block;
+            color: colors.$main-color;
+            @include mixins.standartHover;
+        }
+        &::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+    }
+}
+.heading__button{
+    width: 133px;
+    height: 42px;
+    padding: 12px, 30px, 12px, 30px;
+    background:transparent;
+    border: 2px solid colors.$main-color;;
+    @include mixins.standartHover;
+}
+.heading__logo{
+    font-size: 1.6rem;
+    font-weight: 800;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: colors.$main-color;
+}
