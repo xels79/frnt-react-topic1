@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom"; 
+import { Link,useLocation } from "react-router-dom"; 
 export default function NavMenu(){
+    const location = useLocation();
     const items=[
         {
             lable:"На главную",
@@ -24,7 +25,10 @@ export default function NavMenu(){
             <ul className="nav__menu">
                 {items.map((item, index)=>
                     <li key={index} className="nav__item">
-                        <Link to={item.route} className="nav__link">{item.lable}</Link>
+                        <Link 
+                            to={item.route}
+                            className={"nav__link" + (location.pathname === item.route?" link__active":"")}
+                        >{item.lable}</Link>
                     </li>
                 )}
             </ul>

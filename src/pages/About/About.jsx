@@ -1,12 +1,17 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import reactLogo from '../../assets/react.svg'
 import viteLogo from '/vite.svg'
 import Button from '@components/Button/Button';
+import './about.style.scss';
 
 export default function About() {
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(0);
+    useEffect(() => {
+      // Update the document title using the browser API
+      document.title = `Визитная карточка - Обо мне`;
+    });  
     return (
-      <>
+      <div style={{flex:1}}>
         <div>
           <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
             <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -33,6 +38,6 @@ export default function About() {
           Click on the Vite and React logos to learn more
         </p>
   
-      </>
+      </div>
     );
   }

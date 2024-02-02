@@ -31,6 +31,9 @@ $link-hover-color: darken(colors.$main-background-color,15%);
             color: colors.$main-color;
             @include mixins.standartHover;
         }
+        .link__active{
+            background-color: darken(colors.$main-background-color, 15%);
+        }
         &::after{
             content: "";
             display: table;
@@ -46,12 +49,22 @@ $link-hover-color: darken(colors.$main-background-color,15%);
     text-decoration: none;
     color: colors.$main-color;
 }
+.button__active{
+    background-color: darken(colors.$main-background-color, 15%);
+}
 .heading__logo{
-    font-size: 1.6rem;
-    font-weight: 800;
-    line-height: 2.25rem;
-    letter-spacing: 0em;
     text-align: left;
-    color: colors.$main-color;
-    font-family: sans-serif;    
+    >.logo__link{
+        font-size: 1.6rem;
+        font-weight: 800;
+        line-height: 2.25rem;
+        letter-spacing: 0em;
+        color: colors.$main-color;
+        font-family: sans-serif;
+        text-decoration: none;
+        transition: color .25s ease-in-out;
+        &:hover{
+            color: lighten(colors.$main-color, 30%);
+        }
+    }
 }
