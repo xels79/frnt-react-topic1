@@ -1,0 +1,9 @@
+@use './colors' as colors;
+.site__main{
+    flex:1 1 0%;
+    background: colors.$main-background-color;
+}
+.container{
+    max-width: 1600px;
+    margin: 0 auto;
+}
