@@ -1,4 +1,5 @@
 import { Link,useLocation } from "react-router-dom"; 
+import style from './navmenu.module.scss';
 export default function NavMenu(){
     const location = useLocation();
     const items=[
@@ -21,13 +22,13 @@ export default function NavMenu(){
 
     ];
     return (
-        <nav className="nav">
-            <ul className="nav__menu">
+        <nav className={style.nav}>
+            <ul className={style.nav__menu}>
                 {items.map((item, index)=>
-                    <li key={index} className="nav__item">
+                    <li key={index} className={style.nav__item}>
                         <Link 
                             to={item.route}
-                            className={"nav__link" + (location.pathname === item.route?" link__active":"")}
+                            className={style.nav__link + (location.pathname === item.route?(" "+style.link__active):"")}
                         >{item.lable}</Link>
                     </li>
                 )}

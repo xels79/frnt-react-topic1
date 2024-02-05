@@ -1,0 +1,27 @@
+@use '@/colors.scss' as colors;
+@use '@/_mixin.scss' as mixins;
+.nav{
+    text-align: center;
+    display: block;
+    .nav__menu{
+        display: inline-block;
+        .nav__item{
+            float: left;
+        }
+        .nav__link{
+            margin: .25rem .5rem;
+            padding: .25rem 1rem;
+            display: inline-block;
+            color: colors.$main-color;
+            @include mixins.standartHover;
+        }
+        .link__active{
+            background-color: darken(colors.$main-background-color, 15%);
+        }
+        &::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+    }
+}
