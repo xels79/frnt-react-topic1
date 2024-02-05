@@ -1,0 +1,83 @@
+@use '../../mixin.scss' as mixins;
+.slider__block{
+    .slider__container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding: 0 3rem;
+        .slider__arrow{
+            height: 100px;
+            >img{
+                max-height: 100%;
+                height: 100%;
+                width: auto;
+            }
+        }
+        .slider{
+            display: inline-block;
+            width: auto;
+            //max-width: 100%;
+            min-width: 550px;
+            height: auto;
+            margin: 20px;
+            text-align: center;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;        
+            .slides{
+                display: flex;
+                // overflow-x: scroll;
+                position: relative;
+                // scroll-behavior: smooth;
+                // scroll-snap-type: x mandatory;        
+            //transition: left 1s ease-in-out;    
+                transition: 1s ease-in-out;
+                .slide{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-shrink: 0;
+                    width: 100%;
+                    height: 400px;
+                    margin-right: 0px;
+                    box-sizing: border-box;
+                    transform-origin: center center;
+                    transform: scale(.9);
+                    // scroll-snap-align: center;                
+                    .slide__img{
+                        max-height: 100%;
+                        height: 100%;
+                        display: block;
+                    }                    
+                }
+            }
+        }
+    }
+    .slider__controls{
+        margin-bottom: 1rem;
+        padding: .5rem 1rem;
+        >.slider__dots{
+            display: inline-flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            .slider__dot{
+                width: 30px;
+                height: 30px;
+                border:1px solid;
+                border-radius: 50%;
+                display: block;
+                margin: 0 1rem;
+                &:not(.dot__acitve){
+                    transition: background .25s ease-in-out;
+                    &:hover{
+                        background: lighten(#FF9999,12%);
+                    }
+                }
+            }
+            .dot__acitve{
+                background: #FF9999;
+            }
+        }
+    }
+}

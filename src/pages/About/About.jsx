@@ -1,10 +1,8 @@
-import foto from '../../assets/from-above-laptop-and-coffee.jpg'; 
-import Button from '@components/Button/Button';
 import { useEffect } from 'react'
 import { func } from 'prop-types';
 import style from  './about.module.scss';
-
-export default function About({ openContactClick = ()=>{} }) {
+import Slider from '@/components/Slider/Slider';
+export default function About() {
 
     useEffect(() => {
       // Update the document title using the browser API
@@ -13,11 +11,9 @@ export default function About({ openContactClick = ()=>{} }) {
     return (
       <main className={style.site__main}>
         <div className={style.container}>
-          <h2>About</h2>
+          <h2>Слайдер</h2>
+          <Slider />
         </div>
   </main>
 );
   }
-About.propTypes = {
-    openContactClick: func
-};

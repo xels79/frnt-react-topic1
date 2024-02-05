@@ -6,7 +6,6 @@ import Burger from '../Burger/Burger'
 export default function Heading(){
     const location = useLocation();
     const {isScreenLg:isDesktop} = UseResize();
-    console.log('rec');
     return ( 
         <header className={style.site__heading + (!isDesktop?(" " + style['heading__with-burger']):"")}>
             <div className={style.container}>

@@ -1,4 +1,5 @@
 import { bool, func } from 'prop-types';
+import { useRef } from 'react';
 import style from './contact.module.scss';
 import buttStyle from '../../pages/Home/home.module.scss'
 import InputGroup from '../ControlsGroup/InputGroup';

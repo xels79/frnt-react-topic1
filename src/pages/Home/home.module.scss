@@ -10,6 +10,7 @@
             color:colors.$main-color;
             position: relative;
             width: 60%;
+            text-align: left;
             >.info__heading{
                 font-size: 4.5rem;
                 font-weight: 800;
@@ -44,7 +45,7 @@
             height: 610px;
             padding: 2rem 0;
             position: absolute;
-            z-index: 1;
+            // z-index: 1;
             top: 2rem;
             right: 2rem;
             >.main__img{
@@ -57,7 +58,7 @@
                 left:5%;
                 bottom: 2.5rem;
                 color:aliceblue;
-                z-index: 3;
+                z-index: 60;
                 >a{
                     color:aliceblue;
                     font-weight: 600;
