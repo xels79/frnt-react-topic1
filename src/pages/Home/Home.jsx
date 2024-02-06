@@ -11,7 +11,6 @@ export default function Home({ openContactClick = ()=>{} }) {
       });  
   
       return (
-        <main className={style.site__main}>
           <div className={style.container}>
             <div className={style.main__info}>
                 <span className={style.main__rectangle}></span>
@@ -25,7 +24,6 @@ export default function Home({ openContactClick = ()=>{} }) {
                 <span className={style.img__copyright}>Изображение от <a target='_blank' rel="noreferrer" href="https://ru.freepik.com/free-photo/from-above-laptop-and-coffee_1891559.htm#query=%D0%BD%D0%BE%D1%83%D1%82%D0%B1%D1%83%D0%BA%20%D0%BA%D0%BE%D1%84%D1%84%D0%B5&position=0&from_view=search&track=ais&uuid=054b0fa2-677e-4200-8045-3cb6c3357876">Freepik</a></span>
             </div>
           </div>
-    </main>
   );
   }
 

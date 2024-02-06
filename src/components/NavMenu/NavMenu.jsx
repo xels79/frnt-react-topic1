@@ -8,12 +8,12 @@ export default function NavMenu(){
             route:"/"
         },
         {
-            lable:"Обо мне",
-            route:"/about"
+            lable:"Галерея",
+            route:"/gallery"
         },
         {
-            lable:"Отзывы",
-            route:"/reviews"
+            lable:"Работа",
+            route:"/work"
         },
         {
             lable:"Блог",
