@@ -8,7 +8,6 @@ import arr_r from '@/assets/arr_r.gif';
 export const SliderContext = createContext();
 export default function Slider(){
     const [curentSlide, setCurenSlide] = useState(0);
-    console.log('slider');
     return (
         <SliderContext.Provider value={{
             curentSlide:curentSlide,
