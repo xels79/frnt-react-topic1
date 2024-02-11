@@ -1,0 +1,58 @@
+@use './planet.module.scss' as mixins;
+
+@include mixins.PCNT();
+.planet__content{
+    height: auto;
+    padding: 1rem 2rem;
+    >.planet__text-line{
+        >span{
+            min-width: 145px;
+        }
+        >span,>div{
+            padding: .24rem .5rem;
+        }
+    }
+    >.planet__text-line-flex{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        >div{
+            min-width: 270px;
+            >div{
+                &:not(:last-of-type){
+                    ::after{
+                        display: inline-block;
+                        content: ",";
+                    }
+                }
+            }
+        }
+    }
+}
+.loader {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: block;
+    margin:15px auto;
+    position: relative;
+    color: #FFF;
+    box-sizing: border-box;
+    animation: animloader 1s linear infinite alternate;
+  }
+  
+  @keyframes animloader {
+    0% {
+      box-shadow: -38px -12px ,  -14px 0,  14px 0, 38px 0;
+    }
+    33% {
+      box-shadow: -38px 0px, -14px -12px,  14px 0, 38px 0;
+    }
+    66% {
+      box-shadow: -38px 0px , -14px 0, 14px -12px, 38px 0;
+    }
+    100% {
+      box-shadow: -38px 0 , -14px 0, 14px 0 , 38px -12px;
+    }
+  }
+  

@@ -41,7 +41,7 @@ export default function Work(){
                 totalObjCount:objCount,
                 pageSize:pageSize
             }}>
-                <Planets data={data}/>
+                <Planets data={data} startId={(page-1)*10+1}/>
                 <PlanetsPaginator />
             </PlanetsContent.Provider>
         </div>

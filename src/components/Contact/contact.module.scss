@@ -1,5 +1,6 @@
 @use '../../colors' as colors;
 @use '../../mixin' as mixins;
+@use '../../style.module.scss';
 .modal{
     position: absolute;
     width: 100%;
@@ -8,110 +9,4 @@
     left:0;
     background: rgba(0,0,0,.6);
     z-index: 2000;
-    .modal__body{
-        position: absolute;
-        min-height: 250px;
-        min-width: 500px;
-        max-width: 40vw;
-        top:50%;
-        left:50%;
-        transform: translate(-50%,-50%);
-        background-color: colors.$contact-dialog-bckg-color;
-        display: flex;
-        flex-direction: column;
-        >.modal__heading{
-            display: flex;
-            flex-wrap: nowrap;
-            align-items: center;
-            padding: .25rem .5rem;
-            >.modal__heading-label{
-                flex: 1;
-                padding: .125rem 1rem;
-                overflow: hidden;
-                white-space: nowrap;
-                text-align: left;
-            }
-            >.modal__heading-button{
-                position: relative;
-                margin-left: 1rem;
-                width: 38px;
-                height: 38px;
-                border-radius: 100%;
-                @include mixins.standartHover(colors.$contact-dialog-control-bckg-color);
-                &::after,
-                &::before{
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    width: 60%;
-                    height: 4px;
-                    background: colors.$contact-dialog-close-button-color;
-                    top:50%;
-                    left:50%;
-                }
-                &::before{
-                    transform: translate(-50%,-50%) rotate(45deg);
-                }
-                &::after{
-                    transform: translate(-50%,-50%) rotate(135deg);
-                }
-            }
-        }
-        >.modal__content{
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            color: colors.$main-color;
-            >.control__horizont{
-                display: flex;
-                flex-wrap: nowrap;
-                flex-direction: row;
-                margin-top: .5rem;
-                >.control__group{
-                    width: 50%;
-                    &:not(:first-of-type){
-                        margin-left: 0;
-                    }
-                }
-            }
-            .control__group{
-                background: colors.$contact-dialog-control-bckg-color;
-                padding:  .25rem;
-                margin: 0 .5rem;
-                >.control__label{
-                    display: block;
-                    font-size: .8rem;
-                    width: 100%;
-                    background: colors.$contact-dialog-control-bckg-color;
-                    text-align: left;
-                }
-                >.control__input{
-                    width: 100%;
-                    border: none;
-                    background: colors.$contact-dialog-control-bckg-color;
-                    outline: none;
-                    font-size: 1.1rem;
-                    padding:  .25rem .125rem;
-                }
-                >[role="alert"]{
-                    margin: .25rem 0 0 0;
-                    font-size: .8em;
-                    color: #FF4444;
-                    text-align: left;
-                }
-            }
-            >.control__group{
-                margin-top: 1rem;
-            }
-        }
-        .modal__footer{
-            width: 100%;
-            text-align: right;
-            padding: .5rem 1rem;
-            text-align: center;
-            >.info__button{
-                margin-top: 0;
-            }
-        }
-    }
 }

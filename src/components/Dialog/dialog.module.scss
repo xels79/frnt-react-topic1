@@ -1,0 +1,15 @@
+@use '../../style.module.scss';
+.modal__body{
+    >.modal__heading{
+        background: #8aabfe;
+        color: #222222;
+        font-size: 1.4rem;
+        >.modal__heading-label{
+            font-weight: 600;
+        }
+    }
+    >.modal__content{
+        background: #AAAAAA;
+        font-size: 1.1rem;
+    }
+}

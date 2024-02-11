@@ -5,19 +5,16 @@ import Contact from '@components/Contact/Contact';
 import { bool,func } from 'prop-types';
 import style from  '@/style.module.scss';
 import LayoutContext from '@/contexts/LayoutContext';
-import { useState, useEffect } from 'react';
+import { useState, useRef } from 'react';
 
 export default function Layout({ showContact = false, closeContactClick=()=>{} }) {
     const [bunner, setBunner] = useState('');
-    const [height, setHeight] = useState(0);
-    useEffect(()=>{
-        // setHeight(window.innerHeight);
-        // document.addEventListener('resize', (e)=> setHeight(e.target.outerHeight));
-    });
+    const bunnerClick = useRef(()=>{});
     return (
         <LayoutContext.Provider value={{
-            showBunner:txt=>setBunner(txt),
-            hideBunner:()=>setBunner('')
+            showBunner:(something,clickCallBack)=>setBunner(something),
+            hideBunner:()=>{setBunner('');bunnerClick.current=()=>{};},
+            setBunnerClick:(callBack)=>bunnerClick.current = typeof(callBack)==='function'?callBack:()=>{}
         }}>
             <Heading />
             <main className={style.site__main}>
@@ -25,7 +22,7 @@ export default function Layout({ showContact = false, closeContactClick=()=>{} }
             </main>
             <Footer/>
             <Contact isVisible={showContact} closeClick={closeContactClick}/>
-            {bunner && <div className={style.bunner}><div className={style.bunner__message}>{bunner}</div></div>}
+            {bunner && <div className={style.bunner} onClick={(e)=>bunnerClick.current(e)}><div className={style.bunner__message}>{bunner}</div></div>}
         </LayoutContext.Provider>
     )
 }
